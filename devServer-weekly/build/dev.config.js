@@ -5,16 +5,15 @@ config.mode = "development";
 
 config.devServer = {
     historyApiFallback:true,
+    // hot参数控制更新是否刷新整个页面
     hot: true,
     inline: true,
-    progress: true,
     port: 80
 }
 
+// 也一定要加上HotModuleReplacementPlugin
 config.plugins.push(
-    new webpack.HotModuleReplacementPlugin(),
-    // 当开启 HMR 的时候使用该插件会显示模块的相对路径，建议用于开发环境
-    new webpack.NamedModulesPlugin()
+    new webpack.HotModuleReplacementPlugin()
 )
 
 module.exports = config;
